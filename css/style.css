@@ -1,0 +1,157 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+.category .content-category .text-title{
+    font-weight: 600;
+    font-style: normal;
+    color: #022855;
+    padding: 10px 0;
+    font-size: 28px;
+}
+.category .inf-category{
+    padding: 10px 0;
+}
+.category .inf-category .text-title__post{
+    font-weight: 600;
+    color: #022855;
+    font-size: 23px;
+}
+.category .inf-category .content-text{
+    font-size: 19px;
+    font-weight: 400;
+}
+.category .other_model .text-title{
+    font-weight: 600;
+    font-style: normal;
+    color: #022855;
+    padding: 10px 0;
+    font-size: 28px;
+}
+
+
+
+
+.slider {
+    width: 100%;
+    text-align: center;
+}
+
+.main-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.main-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.main-image-container .prev, .main-image-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    cursor: pointer;
+    opacity: 0.7;
+    background-color: #ccc;
+    display: none;
+}
+.main-image-container:hover .prev, .main-image-container:hover .next{
+    display: block;
+}
+
+.main-image-container .prev {
+    left: 0;
+}
+
+.main-image-container .next {
+    right: 0;
+}
+.slider .img-item{
+    padding: 10px 0;
+
+}
+.slider .img-item .thumbnail{
+    padding: 0 10px;
+     
+}
+
+
+.img-item{
+    position: relative;
+    width: 100%;
+}
+.img-item img {
+    width: 100%;
+    height: auto;
+   
+}
+.img-item .prev, .img-item .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    cursor: pointer;
+    opacity: 0.7;
+    background-color: #ccc;
+    display: none;
+}
+.img-item:hover .prev, .img-item:hover .next{
+    display: block;
+}
+.img-item .prev {
+    left: 0;
+}
+
+.img-item .next {
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+#custCarousel .carousel-indicators {
+  position: static;
+  margin-top:20px;
+}
+
+#custCarousel .carousel-indicators > li {
+width:100px;
+}
+
+#custCarousel .carousel-indicators li img {
+  display: block;
+  opacity: 0.5;
+}
+
+#custCarousel .carousel-indicators li.active img {
+  opacity: 1;
+}
+
+#custCarousel .carousel-indicators li:hover img {
+  opacity: 0.75;
+}
+
+.carousel-item img{
+
+  width:80%;
+}
