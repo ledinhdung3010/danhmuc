@@ -1,8 +1,13 @@
 $(document).ready(function() {
+    var interval = setInterval(function() {
+        nextMain('slider1');
+        nextMain('slider2');
+    }, 3000); // Change 3000 to the interval time in milliseconds (3 seconds)
+
     function updateSlidesVisible(sliderId) {
-        var slidesVisible = 4; // Số lượng ảnh nhỏ hiển thị mặc định
+        var slidesVisible = 4; // Default number of visible thumbnails
         if ($(window).width() <= 480) {
-            slidesVisible = 2; // Giả sử màn hình Android
+            slidesVisible = 2; // Assume mobile screen
         }
         return slidesVisible;
     }
@@ -23,11 +28,14 @@ $(document).ready(function() {
 
         if (currentMainIndex > 0) {
             currentMainIndex--;
-            var newImgSrc = slider.find('.thumbnail').eq(currentMainIndex).find('img').attr('src');
-            slider.find('#mainImg-' + sliderId).attr('src', newImgSrc);
-            slider.data('currentMainIndex', currentMainIndex);
-            updateThumbnailSelection(sliderId);
+        } else {
+            currentMainIndex = totalSlides - 1; // Cycle to the last slide
         }
+
+        var newImgSrc = slider.find('.thumbnail').eq(currentMainIndex).find('img').attr('src');
+        slider.find('#mainImg-' + sliderId).attr('src', newImgSrc);
+        slider.data('currentMainIndex', currentMainIndex);
+        updateThumbnailSelection(sliderId);
     };
 
     window.nextMain = function(sliderId) {
@@ -37,11 +45,14 @@ $(document).ready(function() {
 
         if (currentMainIndex < totalSlides - 1) {
             currentMainIndex++;
-            var newImgSrc = slider.find('.thumbnail').eq(currentMainIndex).find('img').attr('src');
-            slider.find('#mainImg-' + sliderId).attr('src', newImgSrc);
-            slider.data('currentMainIndex', currentMainIndex);
-            updateThumbnailSelection(sliderId);
+        } else {
+            currentMainIndex = 0; // Cycle to the first slide
         }
+
+        var newImgSrc = slider.find('.thumbnail').eq(currentMainIndex).find('img').attr('src');
+        slider.find('#mainImg-' + sliderId).attr('src', newImgSrc);
+        slider.data('currentMainIndex', currentMainIndex);
+        updateThumbnailSelection(sliderId);
     };
 
     window.changeMainImage = function(img, sliderId) {
@@ -85,11 +96,11 @@ $(document).ready(function() {
         slider.find('.thumbnail').eq(currentMainIndex).addClass('selected-img');
     }
 
-    // Gọi lần đầu để hiển thị các ảnh nhỏ cho từng slider
+    // Initial call to display thumbnails for each slider
     showSlides('slider1');
     showSlides('slider2');
 
-    // Cập nhật lại số lượng ảnh nhỏ khi thay đổi kích thước cửa sổ
+    // Update the number of visible thumbnails when resizing the window
     $(window).resize(function() {
         showSlides('slider1');
         showSlides('slider2');
