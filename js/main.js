@@ -7,7 +7,7 @@ $(document).ready(function() {
     function updateSlidesVisible(sliderId) {
         var slidesVisible = 4; // Default number of visible thumbnails
         if ($(window).width() <= 480) {
-            slidesVisible = 2; // Assume mobile screen
+            slidesVisible = 4; // Assume mobile screen
         }
         return slidesVisible;
     }

@@ -2,6 +2,9 @@
 body {
     font-family: Arial, sans-serif;
 }
+.category .container{
+    max-width: 1050px;
+}
 .category .content-category .text-title{
     font-weight: 600;
     font-style: normal;
